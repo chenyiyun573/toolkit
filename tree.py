@@ -1,5 +1,15 @@
 import os
-counter_total = 3
+import sys
+
+# Get command line arguments for counter_total and dir_path
+try:
+    counter_total = int(sys.argv[1])
+except IndexError:
+    counter_total = 3
+try:
+    dir_path = sys.argv[2]
+except IndexError:
+    dir_path = os.getcwd()
 
 def print_folder_tree(dir_path, padding=''):
     """
@@ -29,8 +39,5 @@ def print_folder_tree(dir_path, padding=''):
             print(padding +"...")
             break
 
-# Get the current directory path
-current_dir_path = os.getcwd()
-
-# Print the folder tree of the current directory
-print_folder_tree(current_dir_path)
+# Print the folder tree of the current directory or user-specified directory
+print_folder_tree(dir_path)

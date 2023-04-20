@@ -261,7 +261,7 @@ def handle_client(server:Server_FTP, socket_client, address_conn):
 
 if __name__ == '__main__':
 
-    run = 'client'
+    run = 'server'
     # run = 'server'
     if run == 'server':
         server = Server_FTP()
